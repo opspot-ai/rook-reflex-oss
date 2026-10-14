@@ -1,0 +1,251 @@
+{
+  "note": "Synthetic shared truth table for the rook-reflex deterministic router. Cases are examples, not customer records.",
+  "cases": [
+    {
+      "id": "acc-01-arithmetic",
+      "text": "Quick question: what is 17*23? Reply with only the number.",
+      "expect": "A"
+    },
+    {
+      "id": "acc-01b-arithmetic-bare",
+      "text": "what's 17*23",
+      "expect": "A"
+    },
+    {
+      "id": "acc-02-transcribe-voice-note",
+      "text": "transcribe this voice note",
+      "input": {
+        "hasMedia": true,
+        "mediaKind": "audio",
+        "mediaSeconds": 40
+      },
+      "expect": "A"
+    },
+    {
+      "id": "acc-03-research-full-report",
+      "text": "research a sample feature across several sources and give me a full report",
+      "expect": "B"
+    },
+    {
+      "id": "acc-04-implement-and-pr",
+      "text": "implement a change in ~/Projects/sample-app and open a PR",
+      "expect": "C"
+    },
+    {
+      "id": "acc-05-pay-invoice",
+      "text": "pay the Example Vendor invoice",
+      "expect": "D"
+    },
+    {
+      "id": "a-01",
+      "text": "what time is it in Tokyo?",
+      "expect": "A"
+    },
+    {
+      "id": "a-02",
+      "text": "what does the sample plugin do?",
+      "expect": "A"
+    },
+    {
+      "id": "a-03",
+      "text": "yes go ahead",
+      "expect": "A"
+    },
+    {
+      "id": "a-04",
+      "text": "check if the gateway is up",
+      "expect": "A"
+    },
+    {
+      "id": "a-05",
+      "text": "what did we pay the Example Vendor last month?",
+      "expect": "A"
+    },
+    {
+      "id": "a-06",
+      "text": "how does the delivery tool pick a reply handle?",
+      "expect": "A"
+    },
+    {
+      "id": "a-07",
+      "text": "send the owner a note that I am on it",
+      "expect": "A"
+    },
+    {
+      "id": "a-08",
+      "text": "screenshot this image and tell me the headline",
+      "input": {
+        "hasMedia": true,
+        "mediaKind": "image"
+      },
+      "expect": "A"
+    },
+    {
+      "id": "b-01",
+      "text": "compare two outbound email tools",
+      "expect": "B"
+    },
+    {
+      "id": "b-02",
+      "text": "investigate why the example delivery workflow stopped yesterday",
+      "expect": "B"
+    },
+    {
+      "id": "b-03",
+      "text": "audit the routing configuration and tell me what is mistuned",
+      "expect": "B"
+    },
+    {
+      "id": "b-04",
+      "text": "benchmark model A against model B on synthetic routing prompts",
+      "expect": "B"
+    },
+    {
+      "id": "b-05",
+      "text": "give me a thorough writeup on agency pricing models",
+      "expect": "B"
+    },
+    {
+      "id": "b-06",
+      "text": "transcribe and summarize this call recording",
+      "input": {
+        "hasMedia": true,
+        "mediaKind": "audio",
+        "mediaSeconds": 2400
+      },
+      "expect": "B"
+    },
+    {
+      "id": "b-07",
+      "text": "process this video and pull the product claims out of it",
+      "input": {
+        "hasMedia": true,
+        "mediaKind": "video",
+        "mediaSeconds": 900
+      },
+      "expect": "B"
+    },
+    {
+      "id": "b-08",
+      "text": "check the weather. also find me coffee. and tell me the sample project retention figure. then draft a post.",
+      "expect": "B"
+    },
+    {
+      "id": "b-09",
+      "text": "summarize this",
+      "input": {
+        "attachedDocChars": 90000
+      },
+      "expect": "B"
+    },
+    {
+      "id": "b-10",
+      "text": "LONG_PROMPT_FILLER",
+      "generate": {
+        "repeat": "we need to think carefully about this whole thing. ",
+        "times": 40
+      },
+      "expect": "B"
+    },
+    {
+      "id": "b-11",
+      "text": "do a deep dive on why sample checkout conversion dropped",
+      "expect": "B"
+    },
+    {
+      "id": "b-12",
+      "text": "research payment processors and give me a full report on the tradeoffs",
+      "expect": "B"
+    },
+    {
+      "id": "c-01",
+      "text": "fix the bug in the delivery preflight",
+      "expect": "C"
+    },
+    {
+      "id": "c-02",
+      "text": "deploy the sample service bundle to production",
+      "expect": "C"
+    },
+    {
+      "id": "c-03",
+      "text": "refactor check_config.py so it exits non-zero on partial failures",
+      "expect": "C"
+    },
+    {
+      "id": "c-04",
+      "text": "open a PR against example-org/example-api with the new endpoint",
+      "expect": "C"
+    },
+    {
+      "id": "c-05",
+      "text": "run the database migration on staging first",
+      "expect": "C"
+    },
+    {
+      "id": "c-06",
+      "text": "rotate service credentials and update every consumer",
+      "expect": "C"
+    },
+    {
+      "id": "c-07",
+      "text": "wire up the durable task gateway for lane B",
+      "expect": "C"
+    },
+    {
+      "id": "c-08",
+      "text": "add an endpoint to ~/Workspaces/sample-app for lead intake",
+      "expect": "C"
+    },
+    {
+      "id": "c-09",
+      "text": "ship the new onboarding flow this week",
+      "expect": "C"
+    },
+    {
+      "id": "c-10",
+      "text": "write tests for the reflex router classifier",
+      "expect": "C"
+    },
+    {
+      "id": "c-11",
+      "text": "migrate the customer data off the old schema",
+      "expect": "C"
+    },
+    {
+      "id": "d-01",
+      "text": "wire $42 to the test contractor today",
+      "expect": "D"
+    },
+    {
+      "id": "d-02",
+      "text": "switch the example payment processor from Stripe to Paddle",
+      "expect": "D"
+    },
+    {
+      "id": "d-03",
+      "text": "sign the MSA with the new agency partner",
+      "expect": "D"
+    },
+    {
+      "id": "d-04",
+      "text": "refund the customer's payment for order TEST-001",
+      "expect": "D"
+    },
+    {
+      "id": "d-05",
+      "text": "rename the test company to Example Holdings",
+      "expect": "D"
+    },
+    {
+      "id": "d-06",
+      "text": "sell the ETH position and move it to the bank account",
+      "expect": "D"
+    },
+    {
+      "id": "d-07",
+      "text": "connect a new bank account to a test payment service",
+      "expect": "D"
+    }
+  ]
+}

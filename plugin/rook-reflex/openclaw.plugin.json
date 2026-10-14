@@ -1,0 +1,100 @@
+{
+  "id": "rook-reflex",
+  "name": "Rook Reflex",
+  "description": "Deterministic Reflex Router, latency telemetry, and undelivered-run recorder for Rook.",
+  "version": "0.1.0",
+  "activation": {
+    "onStartup": true,
+    "onCapabilities": [
+      "hook"
+    ]
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "enabled": {
+        "type": "boolean",
+        "default": true,
+        "description": "Master switch. false = hooks registered but inert."
+      },
+      "stateDir": {
+        "type": "string",
+        "default": "~/.openclaw/state/rook-reflex",
+        "description": "Directory for receipts/, telemetry.jsonl, undelivered.jsonl."
+      },
+      "hintOnDirect": {
+        "type": "boolean",
+        "default": true,
+        "description": "Emit the one-line route-A hint. false = stay silent on route A."
+      },
+      "maxHintChars": {
+        "type": "integer",
+        "minimum": 40,
+        "maximum": 2000,
+        "default": 350,
+        "description": "Hard cap on the prependContext routing hint."
+      },
+      "directChannels": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "default": [
+          "telegram",
+          "imessage",
+          "webchat",
+          "web"
+        ],
+        "description": "Channels treated as direct human chats."
+      },
+      "includeChannellessRuns": {
+        "type": "boolean",
+        "default": true,
+        "description": "Route CLI/gateway runs that carry no channel (openclaw agent --session-key ...)."
+      },
+      "undeliveredChannels": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "default": [
+          "telegram",
+          "imessage"
+        ],
+        "description": "Channels where a run with >=1 tool call and no message_sent is recorded as an undelivered/silent run. CLI and webchat one-shots are excluded on purpose."
+      },
+      "longPromptChars": {
+        "type": "integer",
+        "minimum": 100,
+        "default": 1200,
+        "description": "Prompt length above which route B is forced."
+      },
+      "longDocChars": {
+        "type": "integer",
+        "minimum": 100,
+        "default": 4000,
+        "description": "Attached-document length above which route B is forced."
+      },
+      "maxDistinctAsks": {
+        "type": "integer",
+        "minimum": 1,
+        "default": 2,
+        "description": "More distinct asks than this forces route B."
+      },
+      "longMediaSeconds": {
+        "type": "integer",
+        "minimum": 10,
+        "default": 300,
+        "description": "Media longer than this forces route B."
+      },
+      "modelRoutes": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "description": "Symbolic model_route label per selected_mode (direct/detached/durable/board)."
+      }
+    }
+  }
+}
